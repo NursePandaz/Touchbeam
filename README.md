@@ -2,7 +2,7 @@
 
 An experimental Android app that recreates the classic **Touch to beam** screen, original Beam sounds and particles, with photo, file and batch sharing.
 
-**[Download Touchbeam 0.9.1-test APK](https://github.com/NursePandaz/Touchbeam/releases/download/v0.9.1-test/touchbeam-0.9.1-test.apk)** · [Releases](https://github.com/NursePandaz/Touchbeam/releases) · [Full test guide](docs/TESTING.md)
+**[Download Touchbeam 0.9.2-test APK](https://github.com/NursePandaz/Touchbeam/releases/download/v0.9.2-test/touchbeam-0.9.2-test.apk)** · [Releases](https://github.com/NursePandaz/Touchbeam/releases) · [Full test guide](docs/TESTING.md)
 
 ## Try it on two phones
 
@@ -23,7 +23,7 @@ Pair-free, no-Accept sharing requires compatible **Android 10+**, NFC/HCE, BLE a
 
 ## About Touchbeam
 
-Open **About Touchbeam** from the app’s main screen for the original drifting Beam particles, “Touch. Tap. Beam.”, installed version and experimental-build badge, and **Created by NursePandaz**. GitHub, Report an issue and How to beam open in your browser. The credits view includes the original AOSP notices. Animation pauses when hidden and respects disabled system animations.
+Open **About Touchbeam** from the app’s main screen for the original drifting Beam particles, “Touch. Tap. Beam.”, installed version and experimental-build badge, and **Created by NursePandaz** with the creator’s GitHub profile picture. GitHub, Report an issue and How to beam open in your browser. The credits view includes the original AOSP notices. Animation pauses when hidden and respects disabled system animations.
 
 ## Features
 

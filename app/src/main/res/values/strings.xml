@@ -110,4 +110,5 @@
   <string name="about_attribution">Original Beam sounds, particle texture and reference behavior by the Android Open Source Project. Apache License 2.0.\n\nAn independent recreation, not an official Google or Samsung product.</string>
   <string name="about_close">Close</string>
   <string name="about_no_browser">No browser could open this link.</string>
+  <string name="about_avatar_description">NursePandaz’s GitHub profile picture</string>
 </resources>

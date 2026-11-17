@@ -40,7 +40,15 @@ final class AboutDialog extends Dialog {
         catch (android.content.pm.PackageManager.NameNotFoundException ignored) {}
         label(body, getContext().getString(R.string.about_version, version), 13, 0xffaaaaaa, 28);
         label(body, getContext().getString(R.string.about_story), 17, 0xffeeeeee, 18);
-        label(body, getContext().getString(R.string.about_creator), 16, Color.WHITE, 28);
+        LinearLayout creator = new LinearLayout(getContext()); creator.setGravity(Gravity.CENTER); creator.setOrientation(LinearLayout.HORIZONTAL);
+        LinearLayout.LayoutParams creatorLayout = new LinearLayout.LayoutParams(-1, -2); creatorLayout.bottomMargin = dp(28); body.addView(creator, creatorLayout);
+        ImageView avatar = new ImageView(getContext()); avatar.setImageResource(R.drawable.creator_avatar); avatar.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        avatar.setContentDescription(getContext().getString(R.string.about_avatar_description));
+        GradientDrawable avatarBorder = new GradientDrawable(); avatarBorder.setShape(GradientDrawable.OVAL); avatarBorder.setColor(0xff111111); avatarBorder.setStroke(dp(1), 0xff33b5e5);
+        avatar.setBackground(avatarBorder); avatar.setPadding(dp(2), dp(2), dp(2), dp(2)); avatar.setClipToOutline(true);
+        LinearLayout.LayoutParams avatarLayout = new LinearLayout.LayoutParams(dp(48), dp(48)); avatarLayout.setMarginEnd(dp(12)); creator.addView(avatar, avatarLayout);
+        TextView creatorName = new TextView(getContext()); creatorName.setText(R.string.about_creator); creatorName.setTextSize(16); creatorName.setTextColor(Color.WHITE);
+        LinearLayout.LayoutParams nameLayout = new LinearLayout.LayoutParams(-2, -2); nameLayout.weight = 1; creator.addView(creatorName, nameLayout);
         link(body, R.string.about_github, "https://github.com/NursePandaz/Touchbeam");
         link(body, R.string.about_report_issue, "https://github.com/NursePandaz/Touchbeam/issues/new");
         link(body, R.string.about_how_to, "https://github.com/NursePandaz/Touchbeam/blob/main/docs/TESTING.md");

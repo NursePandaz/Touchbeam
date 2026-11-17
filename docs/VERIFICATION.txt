@@ -1,33 +1,26 @@
-TOUCHBEAM 0.9.1 — ABOUT SCREEN TEST BUILD
+TOUCHBEAM 0.9.2 — CREATOR PROFILE PICTURE
 
-Added About Touchbeam: original AOSP star particles behind a dark, scrollable
-Holo-blue layout; existing app icon; Touch. Tap. Beam.; Created by NursePandaz;
-installed version and experimental badge; GitHub, Report an issue and How to
-beam links; separate scrollable, selectable AOSP credits and license text.
-Particles pause when hidden and use the existing reduced-animation behavior.
-Close / Back returns to the main app. About is disabled during foreground
-transfers and exports. Browser failures show a readable message.
+Added NursePandaz's public GitHub profile picture beside Created by NursePandaz
+on the About screen. The image is bundled locally and displayed with circular
+clipping and a Holo-blue border; opening About requires no network access.
+Original Beam particles, story, links, credits and version display remain.
 
-PASS: 566 existing host regression checks.
-PASS: SDK build, APK alignment, v2/v3 signature and packaged version 12 / 0.9.1-test.
-PASS: Offline Gradle assembleDebug and lintDebug: 0 errors / 4 compatibility warnings.
-PASS: SDK Android scan: 0 errors / 5 compatibility warnings.
-PASS: Same application ID and update certificate as 0.9.
-PASS: Original three audio assets and particle texture pixels unchanged from 0.9.
-PASS: Source diff whitespace check. Signing key and local config are ignored.
+PASS: 566 existing host checks.
+PASS: SDK build, alignment and APK v2/v3 signatures.
+PASS: Packaged version 13 / 0.9.2-test and same update certificate as 0.9.1.
+PASS: Packaged avatar pixels match the downloaded source image.
+PASS: Offline Gradle assembleDebug / lintDebug: 0 errors, 4 compatibility warnings.
+PASS: Standalone SDK Android scan: 0 errors, 5 compatibility warnings.
+PASS: Source whitespace check; signing key and local build settings excluded.
 
-Transfer logic and NFC authorization are unchanged from 0.9. Verified pair-free
-taps on supported Android 10+ receive one beam automatically; Classic fallback
-retains acceptance. Background readiness, Stop, file caps and receipts remain.
-
-No physical phone or emulator was connected. Native About layout, scrolling,
-external browser routing, animation lifecycle and device radio behavior require
-on-device verification. Host tests do not exercise Android views. The pair-free
-application encryption protocol remains experimental and not independently audited.
+This is an About-only update. Transfer behavior remains as in 0.9. No phone or
+emulator was connected; native layout and radio behavior still require device
+testing. The conversation preview is an approximation, not an Android screenshot.
 
 Warnings retained: SDK 35 rather than newest (standalone only), scan flag ignored
 below API 31, Back flag ignored below API 33, portrait/large-screen compatibility.
 
-APK: touchbeam-0.9.1-test.apk
-SHA-256: 45435105082124c44f7455d3e6d4f31730f834fc6fc4a621a15866a5b5d95956
+Avatar source: https://avatars.githubusercontent.com/u/339426006?v=4
+APK: touchbeam-0.9.2-test.apk
+SHA-256: 21fdfa161f095191652470aa600ddb492d324e01face07bf47cbf8b848397031
 Certificate SHA-256: 6f35c115d0ca34db0d6be59876913c2ae96e8de3af368377786b0743843b5213
