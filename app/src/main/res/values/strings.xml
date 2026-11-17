@@ -111,4 +111,5 @@
   <string name="about_close">Close</string>
   <string name="about_no_browser">No browser could open this link.</string>
   <string name="about_avatar_description">Open NursePandaz’s GitHub profile</string>
+  <string name="about_creator_link_description">Created by NursePandaz. Open GitHub profile.</string>
 </resources>

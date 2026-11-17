@@ -257,7 +257,7 @@ public final class MainActivity extends Activity {
             if (aboutDialog == null) aboutDialog = new AboutDialog(this);
             aboutDialog.show();
         });
-        column.addView(text("Test build 0.9.3 · Android Beam recreation\nPair-free NFC taps · up to 32 files per beam\n100 MB each · 500 MB total · no internet needed", 12, 0xff999999));
+        column.addView(text("Test build 0.9.4 · Android Beam recreation\nPair-free NFC taps · up to 32 files per beam\n100 MB each · 500 MB total · no internet needed", 12, 0xff999999));
     }
 
     private void prepare(String action) {

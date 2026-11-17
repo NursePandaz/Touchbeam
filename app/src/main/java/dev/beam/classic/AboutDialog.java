@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 
 /** A quiet Holo-blue home for the project's story, links and AOSP credits. */
 final class AboutDialog extends Dialog {
+    private static final String CREATOR_PROFILE = "https://github.com/NursePandaz";
     private FirefliesView particles;
     private AlertDialog licenses;
     AboutDialog(Activity activity) { super(activity, android.R.style.Theme_Holo_NoActionBar); }
@@ -45,13 +46,19 @@ final class AboutDialog extends Dialog {
         ImageView avatar = new ImageView(getContext()); avatar.setImageResource(R.drawable.creator_avatar); avatar.setScaleType(ImageView.ScaleType.CENTER_CROP);
         avatar.setContentDescription(getContext().getString(R.string.about_avatar_description));
         avatar.setFocusable(true); avatar.setTooltipText(getContext().getString(R.string.about_avatar_description));
-        avatar.setOnClickListener(v -> openUrl("https://github.com/NursePandaz"));
+        avatar.setOnClickListener(v -> openUrl(CREATOR_PROFILE));
         GradientDrawable rippleMask = new GradientDrawable(); rippleMask.setShape(GradientDrawable.OVAL); rippleMask.setColor(Color.WHITE);
         avatar.setForeground(new android.graphics.drawable.RippleDrawable(android.content.res.ColorStateList.valueOf(0x5533b5e5), null, rippleMask));
         GradientDrawable avatarBorder = new GradientDrawable(); avatarBorder.setShape(GradientDrawable.OVAL); avatarBorder.setColor(0xff111111); avatarBorder.setStroke(dp(1), 0xff33b5e5);
         avatar.setBackground(avatarBorder); avatar.setPadding(dp(2), dp(2), dp(2), dp(2)); avatar.setClipToOutline(true);
         LinearLayout.LayoutParams avatarLayout = new LinearLayout.LayoutParams(dp(48), dp(48)); avatarLayout.setMarginEnd(dp(12)); creator.addView(avatar, avatarLayout);
         TextView creatorName = new TextView(getContext()); creatorName.setText(R.string.about_creator); creatorName.setTextSize(16); creatorName.setTextColor(Color.WHITE);
+        creatorName.setMinHeight(dp(48)); creatorName.setGravity(Gravity.CENTER_VERTICAL); creatorName.setFocusable(true);
+        creatorName.setContentDescription(getContext().getString(R.string.about_creator_link_description));
+        creatorName.setTooltipText(getContext().getString(R.string.about_avatar_description));
+        creatorName.setOnClickListener(v -> openUrl(CREATOR_PROFILE));
+        GradientDrawable nameMask = new GradientDrawable(); nameMask.setColor(Color.WHITE); nameMask.setCornerRadius(dp(3));
+        creatorName.setForeground(new android.graphics.drawable.RippleDrawable(android.content.res.ColorStateList.valueOf(0x5533b5e5), null, nameMask));
         LinearLayout.LayoutParams nameLayout = new LinearLayout.LayoutParams(-2, -2); nameLayout.weight = 1; creator.addView(creatorName, nameLayout);
         link(body, R.string.about_github, "https://github.com/NursePandaz/Touchbeam");
         link(body, R.string.about_report_issue, "https://github.com/NursePandaz/Touchbeam/issues/new");
