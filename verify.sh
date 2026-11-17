@@ -22,7 +22,7 @@ apk=Path('build/manual/touchbeam-test.apk')
 manifest=subprocess.check_output([str(sdk/'cmdline-tools/latest/bin/apkanalyzer'),'manifest','print',str(apk)],text=True)
 Path('build/verification/packaged-manifest.xml').write_text(manifest)
 tree=ET.fromstring(manifest);a='{http://schemas.android.com/apk/res/android}'
-assert tree.get(a+'versionCode')=='13' and tree.get(a+'versionName')=='0.9.2-test'
+assert tree.get(a+'versionCode')=='14' and tree.get(a+'versionName')=='0.9.3-test'
 assert tree.find('uses-sdk').get(a+'minSdkVersion')=='26'
 application=tree.find('application')
 assert application.get(a+'label')=='Touchbeam'

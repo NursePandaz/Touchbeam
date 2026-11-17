@@ -1,26 +1,26 @@
-TOUCHBEAM 0.9.2 — CREATOR PROFILE PICTURE
+TOUCHBEAM 0.9.3 — CLICKABLE CREATOR PROFILE PICTURE
 
-Added NursePandaz's public GitHub profile picture beside Created by NursePandaz
-on the About screen. The image is bundled locally and displayed with circular
-clipping and a Holo-blue border; opening About requires no network access.
-Original Beam particles, story, links, credits and version display remain.
+Tapping NursePandaz's profile picture in About now opens
+https://github.com/NursePandaz using the same browser launcher as the existing
+project/help links. The 48 dp avatar target has circular ripple feedback,
+keyboard focus, a tooltip and an action-oriented accessibility description.
+If a browser cannot open the link, the existing readable fallback message appears.
+The bundled image and transfer behavior are unchanged.
 
 PASS: 566 existing host checks.
 PASS: SDK build, alignment and APK v2/v3 signatures.
-PASS: Packaged version 13 / 0.9.2-test and same update certificate as 0.9.1.
-PASS: Packaged avatar pixels match the downloaded source image.
+PASS: Packaged version 14 / 0.9.3-test; update certificate matches 0.9.2.
 PASS: Offline Gradle assembleDebug / lintDebug: 0 errors, 4 compatibility warnings.
-PASS: Standalone SDK Android scan: 0 errors, 5 compatibility warnings.
-PASS: Source whitespace check; signing key and local build settings excluded.
+PASS: Standalone SDK scan: 0 errors, 5 compatibility warnings.
+PASS: Source whitespace check; signing keys and local configuration excluded.
 
-This is an About-only update. Transfer behavior remains as in 0.9. No phone or
-emulator was connected; native layout and radio behavior still require device
-testing. The conversation preview is an approximation, not an Android screenshot.
+No phone or emulator connected. Native tap, browser routing, accessibility output
+and view layout still require physical-device checks. The conversation preview
+has a working profile link but is not an Android screenshot.
 
 Warnings retained: SDK 35 rather than newest (standalone only), scan flag ignored
 below API 31, Back flag ignored below API 33, portrait/large-screen compatibility.
 
-Avatar source: https://avatars.githubusercontent.com/u/339426006?v=4
-APK: touchbeam-0.9.2-test.apk
-SHA-256: 21fdfa161f095191652470aa600ddb492d324e01face07bf47cbf8b848397031
+APK: touchbeam-0.9.3-test.apk
+SHA-256: 5d71fd66281b54e8682d920bb72e4906008842c18f8d70be0c976833616eaed8
 Certificate SHA-256: 6f35c115d0ca34db0d6be59876913c2ae96e8de3af368377786b0743843b5213
