@@ -1,44 +1,33 @@
-TOUCHBEAM 0.9 — AUTOMATIC NFC-AUTHORIZED RECEIPT TEST BUILD
+TOUCHBEAM 0.9.1 — ABOUT SCREEN TEST BUILD
 
-PASS: 566 host regression checks. New tests exercise automatic receipt of a file
-and whole batch without a simulated receiver approval action, while preserving
-exact payload bytes, durable commit and receipts. Manual Classic connections and
-wrong-key handshakes cannot grant automatic receipt. Existing crypto, bounds,
-streaming, cancellation, storage, batch, share and stale-capability checks pass.
-PASS: SDK build and offline Gradle assembleDebug / lintDebug.
-PASS: SDK scan: 0 errors / 5 compatibility warnings.
-PASS: Gradle scan: 0 errors / 4 compatibility warnings.
-PASS: Packaged versionCode 11 / 0.9-test, permissions, services and share routes.
-PASS: APK alignment and v2/v3 signature; previous update certificate retained.
-PASS: Original three audio assets and particle pixels unchanged from 0.8.
+Added About Touchbeam: original AOSP star particles behind a dark, scrollable
+Holo-blue layout; existing app icon; Touch. Tap. Beam.; Created by NursePandaz;
+installed version and experimental badge; GitHub, Report an issue and How to
+beam links; separate scrollable, selectable AOSP credits and license text.
+Particles pause when hidden and use the existing reduced-animation behavior.
+Close / Back returns to the main app. About is disabled during foreground
+transfers and exports. Browser failures show a readable message.
 
-A receiver-side callback is emitted only after the unbonded NFC-key channel
-handshake authenticates successfully. The current receiver listener then bypasses
-its file/batch acceptance dialog or notification and creates the same verified
-private-storage sink used previously. Authorization covers one transfer (a single
-file or complete batch); it is not persisted or shared with another session.
+PASS: 566 existing host regression checks.
+PASS: SDK build, APK alignment, v2/v3 signature and packaged version 12 / 0.9.1-test.
+PASS: Offline Gradle assembleDebug and lintDebug: 0 errors / 4 compatibility warnings.
+PASS: SDK Android scan: 0 errors / 5 compatibility warnings.
+PASS: Same application ID and update certificate as 0.9.
+PASS: Original three audio assets and particle texture pixels unchanged from 0.9.
+PASS: Source diff whitespace check. Signing key and local config are ignored.
 
-The sender's original Touch to beam preview still requires a tap to send. The
-wire ACCEPT frames remain for protocol compatibility; they are automatic on this
-verified path. Receipt, checksums, size limits, atomic batch commit, cancellation
-and latest-complete-batch storage behavior are unchanged. Background readiness
-must be enabled once; the receiver must remain unlocked when the offer arrives.
-Stop in its notification or Cancel beam can still interrupt reception.
+Transfer logic and NFC authorization are unchanged from 0.9. Verified pair-free
+taps on supported Android 10+ receive one beam automatically; Classic fallback
+retains acceptance. Background readiness, Stop, file caps and receipts remain.
 
-Classic/manual connections still ask for Accept. A public UUID match, selecting a
-phone, or an unsuccessful NFC-key proof does not authorize automatic receipt.
-The new route requires compatible Android 10+ BLE advertising/scanning, LE L2CAP
-and NFC/HCE. Use 0.9 on BOTH phones for the complete no-Accept workflow. Older or
-unsupported devices retain the Classic fallback and its existing prompts.
-
-No phones or emulator were connected. Host tests use in-memory streams and Android
-type substitutes; actual NFC, BLE radios, background lifecycle, notifications and
-native UI remain unverified on hardware. The pair-free application encryption
-protocol remains experimental and not independently security-audited.
+No physical phone or emulator was connected. Native About layout, scrolling,
+external browser routing, animation lifecycle and device radio behavior require
+on-device verification. Host tests do not exercise Android views. The pair-free
+application encryption protocol remains experimental and not independently audited.
 
 Warnings retained: SDK 35 rather than newest (standalone only), scan flag ignored
 below API 31, Back flag ignored below API 33, portrait/large-screen compatibility.
 
-APK: touchbeam-0.9-test.apk
-SHA-256: 59c5b8a6c0979067814274d512984f6b367ce3543b6cc59202ce3b82e8616bfc
+APK: touchbeam-0.9.1-test.apk
+SHA-256: 45435105082124c44f7455d3e6d4f31730f834fc6fc4a621a15866a5b5d95956
 Certificate SHA-256: 6f35c115d0ca34db0d6be59876913c2ae96e8de3af368377786b0743843b5213

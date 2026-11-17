@@ -1,8 +1,14 @@
-# Touchbeam — tap-to-receive test build 0.9
+# Touchbeam — About screen test build 0.9.1
 
 A native **Android Beam recreation**, with the original NFC connection, completion and error sounds, original particle texture, and a Canvas adaptation of AOSP's particles. The sender sees the classic black screen, cyan “Touch to beam” prompt, and a 60% app preview. This is an independent app, not Samsung S Beam or a restoration of Android's removed system-wide Beam feature.
 
 Version 0.4 sends **an entire selection in one beam**: one connection, one tap to send, one receiving confirmation, and one final completion after every file is verified and saved. Files stream sequentially over the same Bluetooth connection. They are not all loaded into memory at once. The Beam screen, sound and particles remain in place, with progress for the current file and the whole batch.
+
+## About screen in 0.9.1
+
+On the main screen, tap **About Touchbeam**. It shows the original animated Beam particles, “Touch. Tap. Beam.”, the installed version, **Created by NursePandaz**, and links to GitHub, Report an issue, and How to beam. Credits and open-source licenses remain available in a separate scrollable view. Close or Back returns to the app. The animation pauses when hidden and respects the system animation setting. The About button is disabled during a foreground beam or export.
+
+This patch preserves the 0.9 transfer behavior. Install 0.9.1 on both phones for the latest app, or update an existing 0.9 install directly.
 
 ## Touch, tap, receive automatically in 0.9
 
@@ -93,14 +99,14 @@ The original UI, sounds, particles, share target, file limits and batch workflow
 
 ## Install / update
 
-Install **touchbeam-0.9-test.apk** on **both phones**. Android 8.0 or newer and Bluetooth Classic are required. The signing certificate matches the earlier APKs from this chat, so install it over the existing app to keep its saved data. Do not uninstall first unless you intend to remove app data.
+Install **touchbeam-0.9.1-test.apk** on **both phones**. Android 8.0 or newer and Bluetooth Classic are required. The signing certificate matches the earlier APKs from this chat, so install it over the existing app to keep its saved data. Do not uninstall first unless you intend to remove app data.
 
 Version 0.9 lets a verified NFC handover authorize automatic receipt of one beam, while preserving the transfer protocol. Install 0.9 on both phones for the complete no-Accept flow. Versions 0.1–0.3 cannot connect to it; the app gives a version-mismatch message on an incompatible Bluetooth connection.
 
 Use Android's normal downloaded-APK installation flow, or, if USB debugging is already authorized:
 
 ```sh
-adb install -r touchbeam-0.9-test.apk
+adb install -r touchbeam-0.9.1-test.apk
 ```
 
 No Android phone or emulator was connected during development. The APK builds, validates and passes automated checks; radio interoperability, NFC positioning, Android picker behavior and native UI still need your two-phone test.

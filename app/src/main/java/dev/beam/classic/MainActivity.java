@@ -36,7 +36,7 @@ public final class MainActivity extends Activity {
     private TextView status, received;
     private EditText message;
     private Button sendButton, receiveButton, fallback, cancel, copy;
-    private Button photoButton, fileButton, clearFile, saveFile, sharedChooser;
+    private Button photoButton, fileButton, clearFile, saveFile, sharedChooser, aboutButton;
     private TextView attachment, receivedFile;
     private ImageView photoPreview;
     private Bitmap previewBitmap;
@@ -52,6 +52,7 @@ public final class MainActivity extends Activity {
     private Switch sound, backgroundReady;
     private boolean updatingReady;
     private AlertDialog backgroundOffer;
+    private AboutDialog aboutDialog;
     private final SharedPreferences.OnSharedPreferenceChangeListener receiveChanges = (preferences, key) -> {
         if (backgroundReady == null) return;
         if ("background_ready".equals(key)) setReadyChecked(preferences.getBoolean("background_ready", false));
@@ -251,16 +252,12 @@ public final class MainActivity extends Activity {
         }); copy.setVisibility(received.length() == 0 ? View.GONE : View.VISIBLE);
         receivedFile = text("", 15, Color.WHITE); column.addView(receivedFile);
         saveFile = button("Save received file…", () -> { if (ReadyService.receiving()) status.setText(R.string.ready_incoming_busy); else chooseSaveLocation(); }); refreshReceivedFile();
-        button("About / open-source licenses", () -> {
-            StringBuilder notice = new StringBuilder();
-            try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("NOTICE.txt"), StandardCharsets.UTF_8))) {
-                String line; while ((line = reader.readLine()) != null) notice.append(line).append('\n');
-            } catch (IOException ex) { notice.append("Original Android Beam assets: Android Open Source Project, Apache License 2.0."); }
-            TextView body = text(notice.toString(), 14, Color.WHITE); body.setPadding(dp(16), dp(16), dp(16), dp(16));
-            ScrollView notes = new ScrollView(this); notes.addView(body);
-            new AlertDialog.Builder(this).setTitle("Touchbeam · test build").setView(notes).setPositiveButton("Close", null).show();
+        aboutButton = button("About Touchbeam", () -> {
+            if (mode != NONE || exporting) return;
+            if (aboutDialog == null) aboutDialog = new AboutDialog(this);
+            aboutDialog.show();
         });
-        column.addView(text("Test build 0.9 · Android Beam recreation\nPair-free NFC taps · up to 32 files per beam\n100 MB each · 500 MB total · no internet needed", 12, 0xff999999));
+        column.addView(text("Test build 0.9.1 · Android Beam recreation\nPair-free NFC taps · up to 32 files per beam\n100 MB each · 500 MB total · no internet needed", 12, 0xff999999));
     }
 
     private void prepare(String action) {
@@ -591,6 +588,7 @@ public final class MainActivity extends Activity {
     }
     private void busy(int next) {
         mode = next;
+        if (aboutButton != null) aboutButton.setEnabled(next == NONE && !exporting);
         ReadyService.uiBusy(next != NONE || exporting || choosingSave);
         if (backgroundReady != null) backgroundReady.setEnabled(next == NONE && !exporting);
         sendButton.setEnabled(next == NONE && !loadingAttachment && !exporting && !sharedSelectionPending); receiveButton.setEnabled(next == NONE && !loadingAttachment && !exporting);
@@ -850,8 +848,8 @@ public final class MainActivity extends Activity {
         if (offerDialog != null) { offerDialog.dismiss(); offerDialog = null; }
         removeOverlay(); busy(NONE);
     }
-    @Override protected void onResume() { super.onResume(); resumed = true; ReadyService.uiVisible(true); ensureBackgroundReady(); received.setText(prefs.getString("received", "")); copy.setVisibility(received.length() == 0 ? View.GONE : View.VISIBLE); refreshReceivedFile(); if (backgroundOffer == null) backgroundOffer = ReadyService.showOffer(this); pairing.resumed(); mainHandler.removeCallbacks(pairingExpired); if (mode == ARMED && !resolvingTap) enableReader(); if (mode == RECEIVE && receiverListening) setReceiving(true); }
-    @Override protected void onPause() { resumed = false; disableNfc(); super.onPause(); }
+    @Override protected void onResume() { super.onResume(); resumed = true; if (aboutDialog != null) aboutDialog.resumeParticles(); ReadyService.uiVisible(true); ensureBackgroundReady(); received.setText(prefs.getString("received", "")); copy.setVisibility(received.length() == 0 ? View.GONE : View.VISIBLE); refreshReceivedFile(); if (backgroundOffer == null) backgroundOffer = ReadyService.showOffer(this); pairing.resumed(); mainHandler.removeCallbacks(pairingExpired); if (mode == ARMED && !resolvingTap) enableReader(); if (mode == RECEIVE && receiverListening) setReceiving(true); }
+    @Override protected void onPause() { resumed = false; if (aboutDialog != null) aboutDialog.pauseParticles(); disableNfc(); super.onPause(); }
     @Override protected void onStop() {
         stopNearby();
         String address = peer == null ? null : peer.getAddress();
@@ -862,6 +860,6 @@ public final class MainActivity extends Activity {
         ReadyService.uiVisible(false);
         super.onStop();
     }
-    @Override protected void onDestroy() { stopSession(); prefs.unregisterOnSharedPreferenceChangeListener(receiveChanges); if (bondReceiverRegistered) { unregisterReceiver(bondReceiver); bondReceiverRegistered = false; } mainHandler.removeCallbacksAndMessages(null); if (sharedDialog != null) sharedDialog.dismiss(); disk.shutdownNow(); ReadyService.uiBusy(false); sounds.release(); photoPreview.setImageDrawable(null); previewBitmap = null; super.onDestroy(); }
+    @Override protected void onDestroy() { stopSession(); if (aboutDialog != null) { aboutDialog.dismiss(); aboutDialog = null; } prefs.unregisterOnSharedPreferenceChangeListener(receiveChanges); if (bondReceiverRegistered) { unregisterReceiver(bondReceiver); bondReceiverRegistered = false; } mainHandler.removeCallbacksAndMessages(null); if (sharedDialog != null) sharedDialog.dismiss(); disk.shutdownNow(); ReadyService.uiBusy(false); sounds.release(); photoPreview.setImageDrawable(null); previewBitmap = null; super.onDestroy(); }
     @Override public void onBackPressed() { if (mode != NONE) { stopSession(); status.setText(R.string.ui_beam_cancelled); } else super.onBackPressed(); }
 }

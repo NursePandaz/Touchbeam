@@ -96,4 +96,18 @@
   <string name="pairless_authenticating">Checking the tapped connection…</string>
   <string name="pairless_visibility_expired">Classic visibility ended. Pair-free NFC taps are still ready.</string>
   <string name="tap_auto_connected">NFC tap verified. Waiting for the sender to tap the Beam preview. This beam will receive automatically.</string>
+  <string name="about_title">Touchbeam</string>
+  <string name="about_tagline">Touch. Tap. Beam.</string>
+  <string name="about_experimental">EXPERIMENTAL BUILD</string>
+  <string name="about_version">Version %1$s</string>
+  <string name="about_version_unknown">unknown</string>
+  <string name="about_story">Bringing back the feeling of Android Beam.\nA little nostalgia, one tap at a time.</string>
+  <string name="about_creator">Created by NursePandaz</string>
+  <string name="about_github">View on GitHub</string>
+  <string name="about_report_issue">Report an issue</string>
+  <string name="about_how_to">How to beam</string>
+  <string name="about_credits">Credits and open-source licenses</string>
+  <string name="about_attribution">Original Beam sounds, particle texture and reference behavior by the Android Open Source Project. Apache License 2.0.\n\nAn independent recreation, not an official Google or Samsung product.</string>
+  <string name="about_close">Close</string>
+  <string name="about_no_browser">No browser could open this link.</string>
 </resources>
