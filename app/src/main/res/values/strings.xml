@@ -1,0 +1,99 @@
+<resources>
+  <string name="nfc_description">Touchbeam connection</string>
+  <string name="ui_shared_text_is_ready_review_it_then">Shared text is ready. Review it, then tap Send.</string>
+  <string name="ui_ready_for_another_beam">Ready for another beam.</string>
+  <string name="ui_original_beam_sounds">Original Beam sounds</string>
+  <string name="ui_this_phone_has_no_bluetooth_classic_adapter">This phone has no Bluetooth Classic adapter.</string>
+  <string name="ui_allow_nearby_devices_permission_to_connect_the">Allow Nearby devices permission to connect the phones.</string>
+  <string name="ui_no_file_picker_is_available_on_this">No file picker is available on this phone.</string>
+  <string name="ui_sending_text">Sending text</string>
+  <string name="ui_text_will_be_sent_choose_a_photo">Text will be sent. Choose a photo or file to attach one.</string>
+  <string name="ui_choose_1_32_files">Choose 1–32 files.</string>
+  <string name="ui_reading_file_details">Reading file details…</string>
+  <string name="ui_selection_could_not_be_loaded_check_file">Selection could not be loaded. Check file access and limits: 32 files, 100 MB each, 500 MB total. No files were skipped.</string>
+  <string name="ui_no_folder_picker_is_available_on_this">No folder picker is available on this phone.</string>
+  <string name="ui_no_file_saving_app_is_available_on">No file saving app is available on this phone.</string>
+  <string name="ui_no_received_file_is_available">No received file is available.</string>
+  <string name="ui_saving_received_file">Saving received file…</string>
+  <string name="ui_nearby_devices_permission_is_needed_you_can">Nearby devices permission is needed. You can try again with Send or Receive.</string>
+  <string name="ui_select_up_to_32_files">Select up to 32 files.</string>
+  <string name="ui_turn_on_bluetooth_to_test_a_beam">Turn on Bluetooth to test a beam.</string>
+  <string name="ui_pair_the_other_phone_in_bluetooth_settings">Pair the other phone in Bluetooth settings first, then return and tap Send.</string>
+  <string name="ui_allow_nearby_devices_permission_in_android_settings">Allow Nearby devices permission in Android settings, then try Send again.</string>
+  <string name="ui_enter_text_between_1_and_16384_utf">Enter text between 1 and 16384 UTF-8 bytes.</string>
+  <string name="ui_opening_receiver">Opening receiver…</string>
+  <string name="ui_beam_complete_the_other_phone_confirmed_receipt">Beam complete. The other phone confirmed receipt.</string>
+  <string name="ui_screen_not_ready_try_again">Screen not ready. Try again.</string>
+  <string name="ui_not_enough_memory_for_the_beam_preview">Not enough memory for the Beam preview. Close other apps and try again.</string>
+  <string name="ui_nfc_touch_interrupted_hold_the_phone_backs">NFC touch interrupted. Hold the phone backs together again, or use Connect without NFC.</string>
+  <string name="ui_session_closed_when_the_app_left_the">Session closed when the app left the screen. Choose Send or Receive to restart.</string>
+  <string name="ui_beam_cancelled">Beam cancelled.</string>
+  <string name="selection_single">File to send: %1$s\n%2$s</string>
+  <plurals name="selection_batch"><item quantity="one">%1$d file in one beam · %2$s</item><item quantity="other">%1$d files in one beam · %2$s</item></plurals>
+  <string name="size_unknown">Some sizes unknown</string>
+  <plurals name="ready_files"><item quantity="one">Ready to beam %1$d file. Tap Send.</item><item quantity="other">Ready to beam %1$d files together. Tap Send.</item></plurals>
+  <plurals name="ready_files_with_text"><item quantity="one">Ready to beam %1$d file. Tap Send. Text is separate.</item><item quantity="other">Ready to beam %1$d files together. Tap Send. Text is separate.</item></plurals>
+  <string name="save_all_received">Save all received files…</string>
+  <string name="save_one_received">Save received file…</string>
+  <plurals name="saving_count"><item quantity="one">Saving %1$d file…</item><item quantity="other">Saving %1$d files…</item></plurals>
+  <string name="saving_count_progress">Saving files: %1$d / %2$d</string>
+  <string name="receiver_instructions">On %1$s, tap Receive. Then touch the backs of the phones together, or use Connect without NFC.</string>
+  <string name="connecting_to">Connecting to %1$s…</string>
+  <string name="connected_waiting">Connected to %1$s. Waiting for them to touch to beam…</string>
+  <string name="connected_to">Connected to %1$s</string>
+  <string name="receiving_batch">Receiving %1$s</string>
+  <string name="receiving_file">Receiving · %1$s</string>
+  <string name="sending_batch">Sending %1$s</string>
+  <plurals name="verified_files"><item quantity="one">Beam complete. %1$d file verified. Use Save to keep a copy.</item><item quantity="other">Beam complete. All %1$d files verified. Use Save to keep a copy.</item></plurals>
+  <string name="verified_text">Beam complete. Received text is saved below.</string>
+  <string name="beam_touch_hint">Touch to beam</string>
+  <string name="beam_waiting_hint">Waiting for the other phone…</string>
+  <string name="beam_verified_hint">Verified · beam complete</string>
+  <string name="discovery_pairing_expired">Pairing timed out. Return to Touchbeam and restart Send or Receive.</string>
+  <string name="discovery_visibility_expired">Nearby visibility ended. Paired phones can still connect. Cancel and tap Receive again to become visible.</string>
+  <string name="discovery_searching">Looking for phones with Touchbeam ready…</string>
+  <string name="discovery_title">Nearby phones</string>
+  <string name="discovery_ready">Nearby Touchbeam</string>
+  <string name="discovery_paired">Paired · not checked</string>
+  <string name="discovery_receive_ready">Ready to receive. Visible nearby for about two minutes. On the other phone tap Send, then select this phone.</string>
+  <string name="discovery_receive_paired">Ready for paired phones. Pair-free setup is unavailable. For new phones, cancel and choose Receive with Bluetooth visibility.</string>
+  <string name="discovery_pairing_pending">Waiting for Android pairing. Approve the matching code on both phones, then return to Touchbeam.</string>
+  <string name="tap_ready">Ready to tap. The other phone can use Receive, or leave Touchbeam with Ready in background enabled. Hold the backs together. Supported phones connect without pairing. Or choose a phone manually below.</string>
+  <string name="tap_finding">Tap recognized. Finding that exact receiver over Bluetooth… You can separate the phones. Keep the receiver ready.</string>
+  <string name="tap_not_found">Could not find the tapped receiver. Check its ready notification, or keep Receive open. New phones need temporary visibility. Tap again, or choose a phone manually.</string>
+  <string name="tap_search_status">Tap recognized. Finding that exact receiver over Bluetooth…\n%1$s</string>
+  <string name="ready_starting">Preparing background receiver…</string>
+  <string name="ready_bluetooth_off">Turn Bluetooth on to receive. Stop disables background readiness.</string>
+  <string name="ready_listening">Ready while unlocked · paired phones can tap to beam. New phones need temporary visibility.</string>
+  <string name="ready_connected">Connected. Incoming files need your acceptance in the incoming notification.</string>
+  <string name="ready_text_saved">Received text is saved in Touchbeam. Tap to view it.</string>
+  <string name="ready_complete">Beam complete</string>
+  <string name="ready_failed">Beam did not complete</string>
+  <string name="ready_offer_instructions">Accept only if you expect this beam. Review the filenames below. Open Touchbeam for the full list. You have 60 seconds to decide.</string>
+  <string name="ready_size_unknown">size unknown · maximum 100 MB</string>
+  <string name="ready_bytes">Bytes: %1$d</string>
+  <string name="ready_accept">Accept</string>
+  <string name="ready_decline">Decline</string>
+  <string name="ready_receiving">Receiving beam…</string>
+  <string name="ready_progress">Receiving · %1$d KB</string>
+  <string name="ready_paused">Ready when this app is closed. Use Receive while the Touchbeam screen is open.</string>
+  <string name="ready_title">Touchbeam · background readiness</string>
+  <string name="ready_stop">Stop</string>
+  <string name="ready_toggle">Ready in background</string>
+  <string name="ready_explanation">Enable once, then leave Touchbeam. Verified NFC taps on supported Android 10+ phones receive files automatically while unlocked. Classic fallback asks for Accept and may need pairing and temporary visibility. Stop in the notification turns this off.</string>
+  <string name="ready_needs_notifications">Allow Nearby devices and notifications to enable background readiness. Check that both Touchbeam notification channels are enabled.</string>
+  <string name="ready_enabled">Background readiness enabled. Leave this screen to listen; the notification shows the current state.</string>
+  <string name="ready_incoming_busy">An incoming background beam is in progress. Accept or decline it in the notification, or turn off Ready in background to cancel it.</string>
+  <string name="ready_cannot_start">Android could not start background readiness. Open Touchbeam and try the switch again.</string>
+  <string name="ready_no_offer">No file offer is waiting. Incoming files appear in a notification with Accept and Decline.</string>
+  <plurals name="ready_files_saved"><item quantity="one">%1$d received file is saved privately. Open Touchbeam to save a permanent copy.</item><item quantity="other">%1$d received files are saved privately. Open Touchbeam to save a permanent copy.</item></plurals>
+  <plurals name="ready_offer_title"><item quantity="one">Receive %1$d file?</item><item quantity="other">Receive %1$d files?</item></plurals>
+  <string name="pairless_receive_ready">Ready for pair-free taps. A verified NFC tap authorizes one beam automatically, including files. Keep this phone unlocked.</string>
+  <string name="pairless_background_ready">Ready while unlocked · pair-free NFC taps receive automatically. No pairing or Accept step for verified taps.</string>
+  <string name="pairless_finding">Tap recognized. Finding that phone for a pair-free connection… You can separate the phones.</string>
+  <string name="pairless_connecting">Connecting to the tapped phone without pairing…</string>
+  <string name="pairless_failed">Pair-free connection was unavailable. Keep the receiver ready and tap again, or choose a phone manually. The Classic fallback may ask for pairing.</string>
+  <string name="pairless_authenticating">Checking the tapped connection…</string>
+  <string name="pairless_visibility_expired">Classic visibility ended. Pair-free NFC taps are still ready.</string>
+  <string name="tap_auto_connected">NFC tap verified. Waiting for the sender to tap the Beam preview. This beam will receive automatically.</string>
+</resources>
